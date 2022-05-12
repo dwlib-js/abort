@@ -1,0 +1,58 @@
+{
+  "name": "@dwlib/abort",
+  "version": "2.0.0",
+  "description": "Abort API",
+  "main": "lib/index.js",
+  "imports": {
+    "#intrinsic": "@dwlib/intrinsic",
+    "#intrinsic/*": "@dwlib/intrinsic/*",
+    "#type": "@dwlib/type",
+    "#type/*": "@dwlib/type/*",
+    "#internal-slot": "@dwlib/internal-slot",
+    "#internal-slot/*": "@dwlib/internal-slot/*",
+    "#timeout": "@dwlib/timeout",
+    "#timeout/*": "@dwlib/timeout/*",
+    "#event-emitter": "@dwlib/event-emitter",
+    "#event-emitter/*": "@dwlib/event-emitter/*",
+    "#internal": {
+      "require": "./lib/internal/index.js",
+      "import": "./lib/internal/index.mjs"
+    }
+  },
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./lib/index.mjs"
+    },
+    "./*": {
+      "require": "./lib/*.js",
+      "import": "./lib/*.mjs"
+    }
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwlib-js/abort.git"
+  },
+  "keywords": [
+    "abort",
+    "signal",
+    "controller"
+  ],
+  "author": "Pavel Wolf",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dwlib-js/abort/issues"
+  },
+  "homepage": "https://github.com/dwlib-js/abort#readme",
+  "dependencies": {
+    "@dwlib/event-emitter": "^2.0.1",
+    "@dwlib/internal-slot": "^1.0.0",
+    "@dwlib/intrinsic": "^1.0.0",
+    "@dwlib/timeout": "^1.0.0",
+    "@dwlib/type": "^1.0.0"
+  }
+}
