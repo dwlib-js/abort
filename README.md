@@ -58,37 +58,47 @@ import IsAbortSignal from '@dwlib/abort/IsAbortSignal';
 ```
 
 ## API
-- *static class* Abort
-  - *static* Controller
-  - *static* Error
-  - *static* Signal
-- *class* AbortController
-  - constructor()
-  - *get* signal
-  - abort([reason])
-- *class* AbortError
-  - constructor([message])
-- *class* AbortSignal
-  - *static* abort([reason])
-  - *static* timeout(delay)
-  - constructor()
-  - *get* aborted
-  - *get* reason
-  - on(event, listener[, options])
-  - throwIfAborted()
+- `static class Abort`
+  - `static Controller = AbortController`
+  - `static Error = AbortError`
+  - `static Signal = AbortSignal`
+- `class AbortController`
+  - `constructor()`
+  - `get signal => AbortSignal`
+  - `abort([reason: any]) => boolean`
+- `class AbortError`
+  - `constructor([message: string])`
+- `class AbortSignal`
+  - `static abort([reason: any]) => AbortSignal`
+  - `static timeout(delay: number) => AbortSignal`
+  - `constructor()`
+  - `get aborted => boolean`
+  - `get reason => any`
+  - `on(event: string | symbol, listener: Function[, options: {
+      once?: boolean
+    }?]) => unsubscribe() => boolean`
+  - `on(event = 'abort', listener: (reason: any, abortSignal: AbortSignal) => void[, options: {
+      once?: boolean
+    }?]) => unsubscribe() => boolean`
+  - `throwIfAborted() => void`
 
 ### Builtins
-- new AbortController()
-- AbortControllerAbort(abortController[, reason])
-- AbortControllerSignal(abortController)
-- new AbortError([message])
-- new AbortSignal()
-- AbortSignalAbort([reason])
-- AbortSignalAborted(abortSignal)
-- AbortSignalOn(abortSignal, event, listener[, options])
-- AbortSignalReason(abortSignal)
-- AbortSignalThrowIfAborted(abortSignal)
-- AbortSignalTimeout(delay)
-- IsAbortController(argument)
-- IsAbortError(argument)
-- IsAbortSignal(argument)
+- `new AbortController()`
+- `AbortControllerAbort(abortController: AbortController[, reason: any]) => boolean`
+- `AbortControllerSignal(abortController: AbortController) => AbortSignal`
+- `new AbortError([message: string])`
+- `new AbortSignal()`
+- `AbortSignalAbort([reason: any]) => AbortSignal`
+- `AbortSignalAborted(abortSignal: AbortSignal) => boolean`
+- `AbortSignalOn(abortSignal: AbortSignal, event: string | symbol, listener: Function[, options: {
+    once?: boolean
+  }?]) => unsubscribe() => boolean`
+- `AbortSignalOn(abortSignal: AbortSignal, event = 'abort', listener: (reason: any, abortSignal: AbortSignal) => void[, options: {
+    once?: boolean
+  }?]) => unsubscribe() => boolean`
+- `AbortSignalReason(abortSignal: AbortSignal) => any`
+- `AbortSignalThrowIfAborted(abortSignal: AbortSignal) => void`
+- `AbortSignalTimeout(delay: number) => AbortSignal`
+- `IsAbortController(argument: any) => boolean`
+- `IsAbortError(argument: any) => boolean`
+- `IsAbortSignal(argument: any) => boolean`

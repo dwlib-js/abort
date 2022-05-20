@@ -1,6 +1,6 @@
 {
   "name": "@dwlib/abort",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Abort API",
   "main": "lib/index.js",
   "imports": {
@@ -49,10 +49,10 @@
   },
   "homepage": "https://github.com/dwlib-js/abort#readme",
   "dependencies": {
-    "@dwlib/event-emitter": "^2.0.1",
+    "@dwlib/event-emitter": "^2.0.3",
     "@dwlib/internal-slot": "^1.0.0",
     "@dwlib/intrinsic": "^1.0.0",
-    "@dwlib/timeout": "^1.0.0",
+    "@dwlib/timeout": "^1.0.2",
     "@dwlib/type": "^1.0.0"
   }
 }
